@@ -1,5 +1,5 @@
 # Python Analytics
-This repository contains my solutions to questions attempted on StrataScratch to demonstrate my SQL skills to solve business problem statements.
+This repository contains my solutions to questions attempted on StrataScratch to improve my python skills to solve business problem statements.
 
 ## Completed Questions: `11`
 |  #  | Title | Difficulty | Solution |
