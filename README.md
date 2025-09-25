@@ -1,7 +1,7 @@
 # Python Analytics
 This repository contains my solutions to questions attempted on StrataScratch to demonstrate my SQL skills to solve business problem statements.
 
-## Completed Questions: `7`
+## Completed Questions: `8`
 |  #  | Title | Difficulty | Solution |
 |:---:|:-----:|:----------:|:--------:|
 |10277|[Find all inspections which are part of an inactive program](https://platform.stratascratch.com/coding/10277-find-all-inspections-which-are-part-of-an-inactive-program?code_type=2)|Easy|[Link](https://github.com/adibandla/stratascratch-pandas-daily/blob/main/pandas/10277.py)
