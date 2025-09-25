@@ -38,3 +38,15 @@ customers.merge(
     .groupby('order_date') \
     .apply(lambda x: x[x['total_order_cost'] == x['total_order_cost'].max()]) \
     .reset_index(drop=True)
+
+# alternate solution 
+customers.merge(
+    orders[orders['order_date'].between('2019-02-01', '2019-05-01')] \
+    left_on = 'id',
+    right_on = 'cust_id'
+    ) \
+    .groupby(['first_name', 'order_date'], as_index = False)['total_order_cost'] \
+    .sum() \
+    .assign(max_cost_per_date = lambda df: df.groupby('order_date')['total_order_cost'].transform('max')) \
+    .query('total_order_cost == max_cost_per_date', engine = 'python') \
+    [['first_name', 'order_date', 'total_order_cost']]
