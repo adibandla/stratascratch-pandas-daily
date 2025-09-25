@@ -36,7 +36,7 @@ customers.merge(
     .sum() \
     .reset_index() \
     .groupby('order_date') \
-    .apply(lambda x: x[x['total_order_cost'] == x['total_order_cost'].max()]) \
+    .apply(lambda df: df[df['total_order_cost'] == df['total_order_cost'].max()]) \
     .reset_index(drop=True)
 
 # alternate solution 
