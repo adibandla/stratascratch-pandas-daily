@@ -27,19 +27,8 @@ import pandas as pd
 customers.head()
 
 # merge tables and filter dates
-customers.merge(
-    orders[orders['order_date'].between('2019-02-01', '2019-05-01')],
-    left_on = 'id',
-    right_on = 'cust_id'
-    ) \
-    .groupby(['first_name', 'order_date'])['total_order_cost'] \
-    .sum() \
-    .reset_index() \
-    .groupby('order_date') \
-    .apply(lambda df: df[df['total_order_cost'] == df['total_order_cost'].max()]) \
-    .reset_index(drop=True)
-
-# alternate solution 
+# group & compute daily order costs
+# filter by max cost per date
 customers.merge(
     orders[orders['order_date'].between('2019-02-01', '2019-05-01')] \
     left_on = 'id',
