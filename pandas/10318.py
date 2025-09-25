@@ -48,7 +48,9 @@ num_products_by_year = (
     car_launches
     .groupby(['company_name', 'year'])['product_name']
     .count()
+    # here unstack pivots index or multiindex columns
     .unstack(level = 'year', fill_value= 0)
+    # use the lambda function to refer to the internal df returned
     .assign(net_difference = lambda df: df[2020] - df[2019])
     .reset_index()
     [['company_name', 'net_difference']]
